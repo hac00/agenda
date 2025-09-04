@@ -2,7 +2,7 @@ from django.contrib.messages.views import SuccessMessageMixin
 from django.core.paginator import Paginator
 from django.shortcuts import render
 from django.urls import reverse_lazy
-from django.views.generic import ListView, CreateView, UpdateView
+from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from pyexpat.errors import messages
 
 from .forms import ClienteModelForm
@@ -39,3 +39,9 @@ class ClienteUpdateView(SuccessMessageMixin, UpdateView):
     template_name = 'cliente_form.html'
     success_url = reverse_lazy('clientes')
     success_message = 'Cliente atualizado com sucesso.'
+
+class ClienteDeleteView(SuccessMessageMixin, DeleteView):
+    model = Cliente
+    template_name = 'cliente_apagar.html'
+    success_url = reverse_lazy('clientes')
+    success_message = 'Cliente deletado com sucesso.'
