@@ -4,7 +4,6 @@
 {% block content %}
 <section class="section" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
         <div class="container">
-            {% if object_list %}
             <form action="" method="GET">
                 <div class="form-group row p-3">
                     <label class="col-sm-2 col-form-label">Nome do cliente: </label>
@@ -19,6 +18,7 @@
                     </div>
                 </div>
             </form>
+            {% if object_list %}
                 <div class="card-body">
                     <h3 class="text-center">Clientes Cadastrados</h3>
                     <div class="table-responsive">

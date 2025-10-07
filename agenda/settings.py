@@ -41,13 +41,14 @@ INSTALLED_APPS = [
 
 INSTALLED_APPS += [
 	'django_bootstrap5',
-        'stdimage'
+    'stdimage'
 ]
 
 INSTALLED_APPS += [
     'home',
     'fornecedores',
-    'clientes'
+    'clientes',
+    'funcionarios',
 ]
 
 MIDDLEWARE = [
