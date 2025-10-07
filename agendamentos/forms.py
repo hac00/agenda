@@ -1,6 +1,7 @@
 from django import forms
+from django.forms import inlineformset_factory
 
-from agendamentos.models import Agendamento
+from agendamentos.models import Agendamento, OrdemServicos
 from clientes.models import Cliente
 from funcionarios.models import Funcionario
 
@@ -19,3 +20,5 @@ class AgendamentoModelForm(forms.ModelForm):
             'cliente': {'required': 'O cliente é um campo obrigatório'},
             'funcionario': {'required': 'O funcionário é um campo obrigatório'},
         }
+
+AgendamentosServicoInLine = inlineformset_factory(Agendamento, OrdemServicos, fk_name='agendamento', fields=('servico', 'funcionario', 'situacao', 'observacoes'), extra=1, can_delete=True)
